@@ -1,0 +1,20 @@
+<!-- adicionar_aluno.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Categoria</title>
+</head>
+
+<body>
+  <h1>Adicionar Categoria</h1>
+  <form action="{{ url_for('sorveteria.create_categoria') }}" method="post">
+    <label for="nome">Categoria:</label><br>
+    <input type="text" id="Categoria" name="Categoria"><br>
+    <input type="submit" value="Adicionar Categoria">
+  </form> 
+</body>
+
+</html>

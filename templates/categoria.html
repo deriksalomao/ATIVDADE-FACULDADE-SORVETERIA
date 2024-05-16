@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Categorias</title>
+</head>
+
+<body>
+  <h1>Lista de Categorias</h1>
+  {% if categorias is not none %}  <ul>
+      {% for categoria in categorias %}
+      <li><a href="{{ url_for('sorveteria.get_categoria', id_categoria=categoria.Id) }}">{{ categoria.Categoria }} (ID: {{ categoria.Id }})</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Nenhuma categoria encontrada.</p>
+  {% endif %}
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Sorvetes</title>
+</head>
+
+<body>
+  <h1>Lista de Sorvetes</h1>
+  {% if sorvetes %}
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Sabor</th>
+          <th>Categoria</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for sorvete in sorvetes %}
+          <tr>
+            <td>{{ sorvete['Id'] }}</td>
+            <td>{{ sorvete['Sabor'] }}</td>
+            <td>{{ sorvete['Categoria'] }}</td>
+            <td>R$ {{ sorvete['Preco'] }}</td>
+            <td>{{ sorvete['Quantidade'] }}</td>
+            <td>
+              <a href="{{ url_for('sorveteria.get_sorvete', id_sorvete=sorvete['Id']) }}">Detalhes</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>Nenhum sorvete encontrado.</p>
+  {% endif %}
+</body>
+
+</html>

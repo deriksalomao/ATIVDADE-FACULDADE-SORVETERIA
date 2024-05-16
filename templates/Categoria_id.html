@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes da Categoria</title>
+</head>
+
+<body>
+  <h1>Detalhes da Categoria</h1>
+  <p><strong>ID:</strong> {{ categoria.Id }}</p>
+  <p><strong>Categoria:</strong> {{ categoria.Categoria }}</p>
+
+  <form id="delete-form" action="{{ url_for('sorveteria.delete_categoria', id_categoria=categoria.Id) }}" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit">Excluir Categoria</button>
+  </form>
+  <a href="{{ url_for('sorveteria.get_categorias') }}">Voltar para a lista de Categorias</a>
+
+
+</body>
+
+</html>

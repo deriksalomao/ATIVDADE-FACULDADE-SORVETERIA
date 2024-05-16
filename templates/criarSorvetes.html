@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Sorvete</title>
+</head>
+
+<body>
+  <h1>Adicionar Sorvete</h1>
+  <form action="{{ url_for('sorveteria.create_sorvete') }}" method="POST">
+    <label for="sabor">Sabor:</label>
+    <input type="text" name="Sabor" id="sabor" required>
+    <br>
+    <label for="categoria">Categoria:</label>
+    <select name="Categoria_Id" id="categoria" required>
+      {% for categoria in categorias %}
+        <option value="{{ categoria['Id'] }}">{{ categoria['Categoria'] }}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label for="preco">Preço:</label>
+    <input type="number" step="0.01" name="Preco" id="preco" required>
+    <br>
+    <label for="quantidade">Quantidade:</label>
+    <input type="number" name="Quantidade" id="quantidade" required>
+    <br>
+    <button type="submit">Adicionar</button>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atualizar Categoria</title>
+</head>
+<body>
+  <h1>Atualizar Categoria - {{ categoria.Categoria }}</h1>
+  <form action="{{ url_for('sorveteria.update_categoria', id_categoria=categoria['Id']) }}" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <label for="categoria">Categoria:</label>
+    <input type="text" name="Categoria" id="categoria" value="{{ categoria['Categoria'] }}">
+    <br>
+    <button type="submit">Atualizar</button>
+  </form>
+</body>
+</html>
